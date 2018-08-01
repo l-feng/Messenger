@@ -11,12 +11,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity{
 
     private boolean mBound;
     private Messenger mMessenger;
     private TextView textView;
+    private TextView textView1;
 
 
     @Override
@@ -28,10 +30,17 @@ public class MainActivity extends AppCompatActivity{
 
     private void initView() {
         textView=findViewById(R.id.text_view);
+        textView1=findViewById(R.id.text_view1);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 connectBind();
+            }
+        });
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "可以使用", Toast.LENGTH_SHORT).show();
             }
         });
     }

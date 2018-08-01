@@ -11,9 +11,11 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
+
 import static android.content.ContentValues.TAG;
 
 public class MessengerService extends Service {
+    Service service;
 
     class IncomingHandler extends Handler {
         @Override
@@ -21,6 +23,7 @@ public class MessengerService extends Service {
             super.handleMessage(msg);
             switch (msg.what){
                 case 0:
+                   // service.onLowMemory();//测试一个进程挂掉另外一个进程是否可以运行
                     Toast.makeText(getApplicationContext(), "hello, service", Toast.LENGTH_SHORT).show();
                     break;
             }
